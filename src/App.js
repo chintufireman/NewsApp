@@ -9,7 +9,7 @@ import LoadingBar from "react-top-loading-bar";
 
 export default class App extends Component {
   page = 5;
-  // apiKey=process.env.REACT_APP_NEWS_API
+  apiKey=process.env.REACT_APP_NEWS_API
 
   /* any environment variable which u start with REACT_APP then you get acces of it
   in react application */

@@ -49,9 +49,9 @@ export class News extends Component {
     this.updateNews();
   }
   fetchMoreData = async () => {
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
+    
     this.setState({ page: this.state.page + 1 });
-
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
 
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -64,7 +64,7 @@ export class News extends Component {
   render() {
     return (
       <>
-        <h2 className="text-center" style={{ margin: "40px 0px" }}>
+        <h2 className="text-center" style={{ margin: "40px 0px",marginTop:'90px' }}>
           {`NewsMonkey - Top ${
             this.props.category.charAt(0).toUpperCase() +
             this.props.category.slice(1)
